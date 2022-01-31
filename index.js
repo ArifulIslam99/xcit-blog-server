@@ -35,6 +35,7 @@ async function run(){
                 const title = req.body.title;
                 const author = req.body.author;
                 const description = req.body.description;
+                const catagory = req.body.catagory;
                 const status = req.body.status;
                 const date = req.body.date
                 const pic = req.files.image;
@@ -44,7 +45,7 @@ async function run(){
                 
                  const blogs = {
                    
-                    title, date, description, author, status, image,
+                    title, date,catagory, description, author, status, image,
                  }
 
                   console.log(blogs)
