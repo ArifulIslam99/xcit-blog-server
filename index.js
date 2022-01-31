@@ -48,11 +48,39 @@ async function run(){
                     title, date,catagory, description, author, status, image,
                  }
 
-                  console.log(blogs)
+                 
       
                  const result  = await blogCollection.insertOne(blogs)
                  res.json(result)
               }) 
+
+
+              app.get('/blogs/technology', async (req, res)=>{
+
+                   const filter = { catagory: 'technology'};
+                    const query =  blogCollection.find(filter)
+                    const result = await query.toArray()
+
+                res.json(result)
+              })
+
+              app.get('/blogs/science', async (req, res)=>{
+
+                   const filter = { catagory: 'science'};
+                    const query =  blogCollection.find(filter)
+                    const result = await query.toArray()
+
+                res.json(result)
+              })
+      
+              app.get('/blogs/programming', async (req, res)=>{
+
+                   const filter = { catagory: 'programming'};
+                    const query =  blogCollection.find(filter)
+                    const result = await query.toArray()
+
+                res.json(result)
+              })
       
 
 
